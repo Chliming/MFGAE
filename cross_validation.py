@@ -67,12 +67,12 @@ def cross_validation(adj, features, model_str):
 
         metric += metric_tmp
 
-    print("平均：", metric / k_folds)
+    print("AVG：", metric / k_folds)
 
 
 def cv_model_evaluate(adj, predict_matrix, random_index, k):
 
-    # 随机采样 1：1
+    # randomly sampling 1：1
     text_neg = generate_test_index(adj, len(random_index[k]))
 
     real_score, predict_score = test_evaluate(predict_matrix, text_neg, random_index, k)
